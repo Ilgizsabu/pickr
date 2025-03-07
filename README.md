@@ -1,1 +1,1 @@
-# pickr
+# Pickr
