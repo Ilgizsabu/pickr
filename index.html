@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color pickr</title>
+</head>
+<body class="page">
+  <script src="/node_modules/vanilla-picker/dist/vanilla-picker.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttonBlock = document.createElement('button');
+      buttonBlock.classList.add("parent");
+      buttonBlock.textContent = 'Choice is your color';
+      
+      const page = document.querySelector('.page');
+      page.appendChild(buttonBlock);
+
+      var parent = document.querySelector('.parent');
+      var picker = new Picker(parent);
+      
+      picker.onChange = function(color) {
+        parent.style.background = color.rgbaString;
+      };
+    });
+  </script>
+</body>
+</html>
