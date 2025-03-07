@@ -5,16 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color pickr</title>
 </head>
-<body>
-  <button class="parent">Choice is your color</button>
+<body class="page">
   <script src="/node_modules/vanilla-picker/dist/vanilla-picker.js"></script>
   <script>
-    var parent = document.querySelector('.parent');
-    var picker = new Picker(parent);
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttonBlock = document.createElement('button');
+      buttonBlock.classList.add("parent");
+      buttonBlock.textContent = 'Choice is your color';
+      
+      const page = document.querySelector('.page');
+      page.appendChild(buttonBlock);
 
-    picker.onChange = function(color) {
+      var parent = document.querySelector('.parent');
+      var picker = new Picker(parent);
+      
+      picker.onChange = function(color) {
         parent.style.background = color.rgbaString;
-    };
+      };
+    });
   </script>
 </body>
 </html>
